@@ -195,12 +195,6 @@ python_functions = ["test_*"]
 addopts = [
     "-v",
     "--strict-markers",
-    "--cov=models",
-    "--cov=training",
-    "--cov=robot",
-    "--cov=evaluation",
-    "--cov-report=term-missing",
-    "--cov-report=html",
 ]
 markers = [
     "slow: marks tests as slow (deselect with '-m \"not slow\"')",

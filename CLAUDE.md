@@ -12,6 +12,67 @@ This is a research project integrating three cutting-edge approaches for robotic
 
 The goal is to dramatically reduce dependence on human-provided demonstrations while achieving robust, real-world performance on complex manipulation tasks.
 
+## Development Workflow
+
+**CRITICAL REQUIREMENTS for all development:**
+
+### 1. Test-Driven Development
+- **ALWAYS write unit tests** for each component BEFORE considering it complete
+- Minimum test coverage: Every public function/method must have at least one test
+- Tests must be comprehensive and actually verify correctness
+- Run tests after every implementation: `pytest tests/ -v`
+- Target: 80%+ code coverage for all modules
+
+### 2. Git Commit Discipline
+- **Commit FREQUENTLY** - after completing each logical unit of work
+- Commit pattern:
+  - After implementing a new module/class
+  - After writing tests that pass
+  - After updating documentation
+  - After fixing bugs
+  - **At least every 30-60 minutes of work**
+- Commit message format: `<type>: <description>`
+  - Types: feat, fix, test, docs, refactor, chore
+  - Examples:
+    - `feat: Add DreamerV3 RSSM world model`
+    - `test: Add comprehensive tests for replay buffer`
+    - `docs: Update README with installation instructions`
+
+### 3. Documentation Updates
+- **Update README.md** whenever:
+  - New features are added
+  - Installation steps change
+  - Usage examples need updating
+- **Update ARCHITECTURE.md** when system design changes
+- **Keep CLAUDE.md current** with development practices
+- All docstrings must follow Google style
+- Add inline comments for complex logic
+
+### 4. Verification Before Proceeding
+- Before moving to the next component:
+  1. ✓ All tests passing
+  2. ✓ Code committed to git
+  3. ✓ Documentation updated
+  4. ✓ No redundant code
+  5. ✓ Clean, readable implementation
+
+### 5. Branch Strategy
+- **main branch**: Stable, tested code only
+- **dev branch**: Active development (use this!)
+- Feature branches: For major new features
+- Always work on dev or feature branches
+- Only merge to main after thorough testing
+
+### 6. Code Review Checklist
+Before committing, verify:
+- [ ] Code follows project style (clean, no redundancy)
+- [ ] All new functions have docstrings
+- [ ] Unit tests written and passing
+- [ ] No hardcoded paths or credentials
+- [ ] Imports organized and minimal
+- [ ] Type hints where applicable
+- [ ] Error handling implemented
+
 ## Project Architecture
 
 The system follows a multi-component architecture:
