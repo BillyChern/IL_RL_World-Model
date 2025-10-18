@@ -24,6 +24,10 @@ try:
     PYNPUT_AVAILABLE = True
 except ImportError:
     PYNPUT_AVAILABLE = False
+    # Create dummy keyboard module for type hints
+    class keyboard:
+        class Key:
+            pass
     print("Warning: pynput not available. Keyboard intervention disabled.")
 
 

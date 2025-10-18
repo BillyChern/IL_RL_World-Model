@@ -215,14 +215,14 @@ Current progress:
 - [x] **Reward classifier** - Binary success/failure predictor with ResNet-10
 - [x] **DreamerV3 world model** - RSSM implementation in JAX for imagination rollouts
 - [x] **SAC RL algorithm** - Actor-critic networks with HIL-SERL hybrid loss
-- [x] **Human intervention system** - Keyboard-based control for safety and corrections
+- [x] **Human intervention system** - Keyboard-based control for safety and corrections (15 tests ✓)
 - [x] **Asynchronous training** - Dual-loop: robot collection + GPU training threads
-- [x] **Weights & Biases integration** - Full logging with API key configured
-- [x] **Multi-GPU distributed training** - 8x H100 support with PyTorch DDP + JAX pmap
+- [x] **Weights & Biases integration** - Full logging with API key configured (13 tests ✓)
+- [x] **Multi-GPU distributed training** - 8x H100 support with PyTorch DDP + JAX pmap (13 tests ✓)
 - [x] **Main training script** - Integrated pipeline with all components
-- [ ] Evaluation scripts and benchmarking
-- [ ] Full integration testing with hardware
+- [x] **Evaluation & benchmarking** - Comprehensive evaluation system with standard benchmarks (11 tests ✓)
+- [ ] Full integration testing with real hardware
 
-**Tests**: 36 passing | **Code**: ~8000+ lines | **Docs**: 161KB exploration + architecture
+**Tests**: 88 passing ✓ | **Code**: ~10,000+ lines | **Docs**: 161KB exploration + architecture
 
 See [CLAUDE.md](CLAUDE.md) for detailed implementation notes and [docs/](docs/) for exploration documentation.

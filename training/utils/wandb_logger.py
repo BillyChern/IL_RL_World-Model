@@ -11,7 +11,13 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 
 import numpy as np
-import wandb
+
+try:
+    import wandb
+    WANDB_AVAILABLE = True
+except ImportError:
+    WANDB_AVAILABLE = False
+    print("Warning: wandb not available. Logging will be disabled.")
 
 
 class WandbLogger:
@@ -42,10 +48,13 @@ class WandbLogger:
             api_key: W&B API key (or set WANDB_API_KEY env var)
             mode: Logging mode
         """
-        self.enabled = (mode != "disabled")
+        self.enabled = (mode != "disabled") and WANDB_AVAILABLE
 
         if not self.enabled:
-            print("W&B logging disabled")
+            if not WANDB_AVAILABLE:
+                print("W&B logging disabled (wandb not installed)")
+            else:
+                print("W&B logging disabled")
             return
 
         # Set API key if provided

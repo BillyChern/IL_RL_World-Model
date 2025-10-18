@@ -13,10 +13,16 @@ License: MIT
 import os
 from typing import Optional
 
-import jax
 import torch
 import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as DDP
+
+try:
+    import jax
+    JAX_AVAILABLE = True
+except ImportError:
+    JAX_AVAILABLE = False
+    print("Warning: JAX not available. World model distributed training disabled.")
 
 
 class DistributedConfig:
@@ -130,6 +136,10 @@ def setup_jax_distributed(num_devices: int = 8) -> None:
     Args:
         num_devices: Number of GPUs
     """
+    if not JAX_AVAILABLE:
+        print("JAX not available - skipping JAX distributed setup")
+        return
+
     # JAX automatically detects GPUs
     devices = jax.devices("gpu")
 
