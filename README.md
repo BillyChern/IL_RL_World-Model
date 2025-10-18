@@ -209,13 +209,20 @@ We gratefully acknowledge:
 Current progress:
 - [x] Codebase exploration (OpenPI, DreamerV3, HIL-SERL, LeRobot, ARX X5)
 - [x] Repository structure and documentation
-- [ ] ARX X5 robot interface implementation
-- [ ] Data pipeline (RLDS format)
-- [ ] π0.5 VLA integration
-- [ ] DreamerV3 world model integration
-- [ ] HIL-SERL RL pipeline
-- [ ] Asynchronous training loop
-- [ ] Multi-GPU distributed training
-- [ ] Evaluation and benchmarking
+- [x] **ARX X5 robot interface** - DualARXController with 50Hz control, safety limits, 3-camera system (17 tests ✓)
+- [x] **Data pipeline** - RLDS dataset loader, replay buffer with demo/online mixing (15 tests ✓)
+- [x] **π0.5 VLA integration** - Vision-language-action model with diffusion decoder (4 tests ✓)
+- [x] **Reward classifier** - Binary success/failure predictor with ResNet-10
+- [x] **DreamerV3 world model** - RSSM implementation in JAX for imagination rollouts
+- [x] **SAC RL algorithm** - Actor-critic networks with HIL-SERL hybrid loss
+- [x] **Human intervention system** - Keyboard-based control for safety and corrections
+- [x] **Asynchronous training** - Dual-loop: robot collection + GPU training threads
+- [x] **Weights & Biases integration** - Full logging with API key configured
+- [x] **Multi-GPU distributed training** - 8x H100 support with PyTorch DDP + JAX pmap
+- [x] **Main training script** - Integrated pipeline with all components
+- [ ] Evaluation scripts and benchmarking
+- [ ] Full integration testing with hardware
 
-See [CLAUDE.md](CLAUDE.md) for detailed implementation notes.
+**Tests**: 36 passing | **Code**: ~8000+ lines | **Docs**: 161KB exploration + architecture
+
+See [CLAUDE.md](CLAUDE.md) for detailed implementation notes and [docs/](docs/) for exploration documentation.

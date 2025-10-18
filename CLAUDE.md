@@ -38,6 +38,15 @@ The goal is to dramatically reduce dependence on human-provided demonstrations w
     - `test: Add comprehensive tests for replay buffer`
     - `docs: Update README with installation instructions`
 
+**BEFORE EVERY COMMIT - Documentation Check:**
+- [ ] **README.md**: Update project status, features list, installation if changed
+- [ ] **ARCHITECTURE.md**: Update if system design changed
+- [ ] **CITATIONS.md**: Add new papers/code sources if used
+- [ ] **CLAUDE.md**: Update development practices if workflow changed
+- [ ] **Docstrings**: All new functions have Google-style docstrings
+- [ ] **Inline comments**: Complex logic explained
+- [ ] **TODO comments**: Mark incomplete/future work clearly
+
 ### 3. Documentation Updates
 - **Update README.md** whenever:
   - New features are added
